@@ -1,0 +1,172 @@
+/* Stili per la modale di ricerca */
+
+/* Contenitore principale della modal */
+.search-modal-container {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: 4px 0;
+}
+
+/* Intestazione con icona e titolo */
+.search-modal-header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+/* Icona nella intestazione */
+.search-modal-header .search-icon {
+	font-size: 1.4em;
+	opacity: 0.7;
+}
+
+/* Titolo principale */
+.search-modal-header h2 {
+	margin: 0;
+	font-size: 1.1em;
+	font-weight: 600;
+	color: var(--text-normal);
+}
+
+/* Sottotitolo con la cartella attiva */
+.search-modal-header .search-folder-label {
+	font-size: 0.78em;
+	color: var(--text-muted);
+	margin-top: 1px;
+}
+
+/* Riga input + pulsante */
+.search-modal-input-row {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+/* Campo di testo della ricerca */
+.search-modal-input-row input[type="text"] {
+	flex: 1;
+	padding: 6px 10px;
+	border-radius: 6px;
+	border: 1px solid var(--background-modifier-border);
+	background: var(--background-primary);
+	color: var(--text-normal);
+	font-size: 0.95em;
+	outline: none;
+	transition: border-color 0.15s;
+}
+
+/* Evidenzia il campo quando è a fuoco */
+.search-modal-input-row input[type="text"]:focus {
+	border-color: var(--interactive-accent);
+	box-shadow: 0 0 0 2px var(--interactive-accent-hover);
+}
+
+/* Pulsante "Cerca" */
+.search-modal-btn {
+	padding: 6px 14px;
+	border-radius: 6px;
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	font-weight: 600;
+	font-size: 0.9em;
+	border: none;
+	cursor: pointer;
+	transition: background 0.15s;
+	white-space: nowrap;
+}
+
+/* Hover del pulsante */
+.search-modal-btn:hover {
+	background: var(--interactive-accent-hover);
+}
+
+/* Area risultati scorrevole */
+.search-modal-results {
+	max-height: 320px;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	margin-top: 4px;
+}
+
+/* Messaggio di stato (nessun risultato, errore cartella) */
+.search-modal-status {
+	font-size: 0.88em;
+	color: var(--text-muted);
+	padding: 4px 6px;
+}
+
+/* Contatore risultati */
+.search-modal-count {
+	font-size: 0.82em;
+	color: var(--text-muted);
+	padding: 0 6px 4px;
+	border-bottom: 1px solid var(--background-modifier-border);
+	margin-bottom: 4px;
+}
+
+/* Singolo risultato */
+.search-result-item {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 10px;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background 0.1s;
+	color: var(--text-normal);
+}
+
+/* Variante del pulsante per DokuWiki (sfondo distinto) */
+.search-modal-btn--doku {
+	background: var(--background-modifier-border);
+	color: var(--text-normal);
+}
+
+/* Hover del pulsante DokuWiki */
+.search-modal-btn--doku:hover:not(:disabled) {
+	background: var(--background-modifier-border-hover);
+}
+
+/* Stato disabilitato del pulsante DokuWiki (query vuota) */
+.search-modal-btn--doku:disabled {
+	opacity: 0.4;
+	cursor: not-allowed;
+}
+
+.search-result-item.is-selected {
+	background: var(--background-modifier-hover);
+	outline: 2px solid var(--interactive-accent);
+	outline-offset: -2px;
+}
+
+/* Icona file accanto al nome */
+.search-result-item .result-icon {
+	opacity: 0.5;
+	font-size: 0.9em;
+	flex-shrink: 0;
+}
+
+/* Nome del file nel risultato */
+.search-result-item .result-name {
+	flex: 1;
+	font-size: 0.93em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Badge "contenuto" per match nel testo */
+.search-result-item .result-badge {
+	font-size: 0.72em;
+	padding: 1px 6px;
+	border-radius: 10px;
+	background: var(--background-modifier-border);
+	color: var(--text-muted);
+	flex-shrink: 0;
+}
+
